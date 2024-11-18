@@ -5,11 +5,8 @@ use App\Http\Controllers\usersController;
 use App\Http\Controllers\vehicleController;
 use App\Http\Controllers\DealerController;
 
-Route::resource('User', usersController::class);
-Route::resource('vehicule', VehicleController::class);
-Route::resource('dealer', DealerController::class);
+Route::resource('users', usersController::class);
+Route::resource('vehicles', VehicleController::class);
+Route::resource('dealers', DealerController::class);
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [DealerController::class, 'index']);
